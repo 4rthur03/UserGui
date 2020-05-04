@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+
+<div class="bg-image"></div>
+
+  <div class="bg-text">
+    <h1>Welcome To SAU-Eat</h1>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+  </div>
+
+  
+  <div id="id01" class="modal">
+    <form class="modal-content animate" action="/action_page.php" onsubmit="return validateForm()" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="Img/logoTagGreenV.jpg" alt="Logo" class="avatar">
+      </div>
+  
+      <div class="container">
+        <label for="IDnumber"><b>ID Number</b></label>
+        <input type="text" placeholder="Enter ID Number" name="IDnumber" required>
+  
+        <label for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+          
+        <button type="button" onclick="myFunction()" value="Submit form" id="loginBtn">Login</button>
+        <label><input type="checkbox" checked="checked" name="remember"> Remember me</label>
+      </div>
+  
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" onclick="document.getElementById('id01').style.display='none';" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+
+    </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function myFunction() {
+  document.getElementById("myForm").submit();
+  document.location.href = 'main.html';
+}
+
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["psw"].value;
+  
+  if (x == "") {
+    alert("ID must be filled out");
+    return false;
+  }
+  if (y == "") {
+    alert("Password must be filled out");
+    return false;
+  }
+}
+
+</script>
+
+</body>
+</html>
